@@ -8,6 +8,6 @@
  See http://swift.org/CONTRIBUTORS.txt for Swift project authors
 */
 
-public enum Error: ErrorType {
+public enum Error: ErrorProtocol {
     case NoManifest(String)
 }

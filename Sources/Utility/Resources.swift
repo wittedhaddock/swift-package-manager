@@ -47,7 +47,7 @@ public final class Resources {
         // than are exposed via libc.
         var dlinfo = Dl_info()
         if dladdr(&globalSymbolInMainBinary, &dlinfo) != 0 {
-            if let path = String.fromCString(dlinfo.dli_fname) {
+            if let path = String(validatingUTF8: dlinfo.dli_fname) {
                 Resources.registeredMainExecutablePath = try? realpath(path)
             }
         }

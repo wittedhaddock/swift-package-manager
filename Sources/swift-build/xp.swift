@@ -25,7 +25,7 @@ public func describe(prefix: String, _ conf: Configuration, _ modules: [Module],
         //FIXME using `which' is non-ideal: it may not be available
 
         if (try? Utility.popen(["which", "clang++"])) == nil {
-            print("warning: clang++ not found: this will cause build failure", toStream: &stderr)
+            print("warning: clang++ not found: this will cause build failure", to: &stderr)
         }
 
         throw error
